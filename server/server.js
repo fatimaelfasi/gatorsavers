@@ -9,6 +9,11 @@ app.use(express.json());
 // driver connection
 const dbo = require("./db/conn");
 
+//set up GET method to handle GET requests - FE 11/18
+app.get('/', (req, res) => {
+    res.send(`Send was successful.`);
+});
+
 app.listen(port, () => {
     // Perform a connection when the server starts
     dbo.connectToServer(function (err) {
